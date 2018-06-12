@@ -1,7 +1,6 @@
 package com.complany.middleware.controller;
 
 import com.complany.middleware.domain.Author;
-import com.complany.middleware.exception.ResourceNotFoundException;
 import com.complany.middleware.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

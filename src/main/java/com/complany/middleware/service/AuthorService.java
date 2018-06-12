@@ -6,13 +6,19 @@ import com.complany.middleware.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.rmi.PortableRemoteObject;
+import java.rmi.RemoteException;
 import java.util.List;
 
 @Service
-public class AuthorService {
+public class AuthorService extends PortableRemoteObject implements IAuthorService {
 
     @Autowired
     private AuthorRepository repository;
+
+    public AuthorService() throws RemoteException {
+        super();
+    }
 
     public Author create(Author author) {
         return repository.save(author);
